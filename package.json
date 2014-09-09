@@ -1,0 +1,36 @@
+{
+  "name": "ecdsa-signed-response",
+  "version": "0.1.0",
+  "description": "Signed response for express/connect",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "prepublish": "coffee -c index.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shesek/signed-response"
+  },
+  "keywords": [
+    "signed",
+    "signature",
+    "response"
+  ],
+  "author": "Nadav Ivgi <nadav@bitrated.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shesek/signed-response/issues"
+  },
+  "homepage": "https://github.com/shesek/signed-response",
+  "dependencies": {
+    "crypto-hashing": "^0.3.1",
+    "ecdsa": "^0.5.3"
+  },
+  "devDependencies": {
+    "iferr": "^0.1.2",
+    "mocha": "^1.21.4",
+    "express": "^4.8.8",
+    "supertest": "^0.13.0",
+    "coffee-script": "^1.8.0"
+  }
+}
