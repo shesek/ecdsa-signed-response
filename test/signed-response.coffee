@@ -19,12 +19,7 @@ describe 'signed response', ->
       .set 'X-Sign-Response', 1
       .end iferr done, (res) ->
         sig = new Buffer res.get('X-Response-Sig'), 'base64'
-        msg = signed_response.make_message
-          hostname: '127.0.0.1'
-          method: 'GET'
-          url: '/hey'
-        , res.text
-        ok ecdsa.verify msg, (ecdsa.parseSig sig), pubkey
+        ok signed_response.verifier(pubkey)('GET', '/hey', res.text, sig)
         do done
 
   it 'does not sign otherwise', (done) ->
