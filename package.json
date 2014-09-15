@@ -1,6 +1,6 @@
 {
   "name": "ecdsa-signed-response",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Signed response for express/connect",
   "main": "index.js",
   "scripts": {
