@@ -4,7 +4,7 @@ ecdsa = require 'ecdsa'
 
 sign_response = (key, opt={}) ->
   req_filter = opt.req_filter or (req) ->
-    req.method is 'GET' and (req.query.sign_resp or req.get 'X-Sign-Response')
+    req.method is 'GET' and (req.query.sign_resp? or req.get 'X-Sign-Response')
   curve = ecdsa opt.curve or 'secp256k1'
 
   (req, res, next) ->

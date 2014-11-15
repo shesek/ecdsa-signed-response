@@ -14,7 +14,7 @@
       opt = {};
     }
     req_filter = opt.req_filter || function(req) {
-      return req.method === 'GET' && (req.query.sign_resp || req.get('X-Sign-Response'));
+      return req.method === 'GET' && ((req.query.sign_resp != null) || req.get('X-Sign-Response'));
     };
     curve = ecdsa(opt.curve || 'secp256k1');
     return function(req, res, next) {
